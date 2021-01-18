@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.common.EventUtil;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView tv1, tv2, tv3;
 
+    LinearLayout ll1,ll2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         tv1 = (TextView) findViewById(R.id.tv1);
         tv2 = (TextView) findViewById(R.id.tv2);
         tv3 = (TextView) findViewById(R.id.tv3);
+
+        ll1=findViewById(R.id.ll1);
+        ll2=findViewById(R.id.ll2);
 
 
         tv1.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +47,20 @@ public class MainActivity extends AppCompatActivity {
                     Log.e("zhuang", "未集成，无法跳转");
                 }
 
+            }
+        });
+
+        tv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ll1.bringToFront();
+            }
+        });
+
+        tv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ll2.bringToFront();
             }
         });
 
